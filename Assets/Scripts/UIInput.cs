@@ -25,6 +25,7 @@ public class UIInput : MonoBehaviour
 
     public void PlayScene()
     {
+        PlayerPrefs.SetString("PlayerScore", "");
         SceneManager.LoadScene("PlayGround");
     }
 
@@ -68,6 +69,11 @@ public class UIInput : MonoBehaviour
         }
 
 
+    }
+
+    public void Load()
+    {
+        SceneManager.LoadScene("PlayGround");
     }
     
 }

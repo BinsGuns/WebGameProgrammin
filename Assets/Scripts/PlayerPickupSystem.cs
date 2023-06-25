@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class PlayerPickupSystem : MonoBehaviour
 {
+    public HUDText hudText;
     // Start is called before the first frame update
     void Start()
     {
-
+    
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class PlayerPickupSystem : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Item"))
         {
+            hudText.GemPickup.Invoke();
             Destroy(other.gameObject);
         }
     }

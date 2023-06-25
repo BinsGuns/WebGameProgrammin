@@ -39,50 +39,13 @@ public class EnemyCombatSystem : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") )
         {
-           
+            Time.timeScale = 0;
             PlayerInput.gameObject.SetActive(false);
             GameObject.FindWithTag("UIHUD").transform.GetChild(0).gameObject.SetActive(true);
         }
+      
     }
 
-    // private void OnTriggerExit(Collider other)
-    // {
-    //     if (other.gameObject.CompareTag("Player") )
-    //     {
-    //         _attackingPlayer = false;
-    //     }
-    // }
-
-    // private void OnCollisionEnter(Collision collider)
-    // {
-    //     if (collider.gameObject.CompareTag("Player"))
-    //     {
-    //         _attackingPlayer = true;
-    //         StartCoroutine(AttackPlayer());
-    //     }
-    //
-    // }
-    //
-    // private void OnCollisionExit(Collision other)
-    // {
-    //     if (other.gameObject.CompareTag("Player"))
-    //     {
-    //         _attackingPlayer = false;
-    //     }
-    // }
-    
    
-
-    // private IEnumerator AttackPlayer()
-    // {
-    //     while (_attackingPlayer)
-    //     {
-    //         _enemyController.EnemyAttackAnimation?.Invoke();
-    //         _enemyController.OnAttackPlayer?.Invoke(_attackOneDamage);
-    //        yield return new WaitForSeconds(_attackDelay);
-    //     }
-    //     
-    // }
-    
     
 }

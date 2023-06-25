@@ -1,5 +1,7 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -22,6 +24,9 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 		private bool isPause = false;
+
+		public TextMeshProUGUI Score;
+	
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputValue value)
@@ -88,7 +93,15 @@ namespace StarterAssets
 		{
 			isPause = false;
 		}
+		
+		
+		public void OnQuitGame()
+		{
+			Debug.Log("SAVE");
+			PlayerPrefs.SetString("PlayerScore", Score.text);
+			SceneManager.LoadScene("MainMenu");
 
+		}
 		private void Update()
 		{
 			
