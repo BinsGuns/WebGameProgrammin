@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem.EnhancedTouch;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class UIInput : MonoBehaviour
 {
@@ -10,17 +11,20 @@ public class UIInput : MonoBehaviour
     public GameObject ReplayButton;
 
     private bool isMuted = false;
+
+   
     // Start is called before the first frame update
     void Start()
     {
        
     }
 
+   
+
     // Update is called once per frame
     void Update()
     {
-     
-        
+
     }
 
     public void PlayScene()
@@ -70,6 +74,7 @@ public class UIInput : MonoBehaviour
 
 
     }
+    
 
     public void Load()
     {

@@ -1,13 +1,13 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.SceneManagement;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
 
-namespace StarterAssets
-{
+
 	public class StarterAssetsInputs : MonoBehaviour
 	{
 		[Header("Character Input Values")]
@@ -26,13 +26,18 @@ namespace StarterAssets
 		private bool isPause = false;
 
 		public TextMeshProUGUI Score;
-	
+		private CustomInput _customInput;
+
+		private void Awake()
+		{
+			_customInput = new CustomInput();
+		}
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-		public void OnMove(InputValue value)
-		{
-			MoveInput(value.Get<Vector2>());
-		}
+		// public void OnMove(InputValue value)
+		// {
+		// 	MoveInput(value.Get<Vector2>());
+		// }
 
 		public void OnLook(InputValue value)
 		{
@@ -42,17 +47,42 @@ namespace StarterAssets
 			}
 		}
 
-		public void OnJump(InputValue value)
-		{
-			JumpInput(value.isPressed);
-		}
+		// public void OnJump(InputValue value)
+		// {
+		// 	JumpInput(value.isPressed);
+		// }
 
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
 		}
 #endif
+	
+		private void OnEnable()
+		{
+			_customInput.Enable();
+		}
 
+		private void OnDisable()
+		{
+			_customInput.Disable();
+		}
+
+		private void Start()
+		{
+			_customInput.Player.Move.started += ctx => Move(ctx);
+			_customInput.Player.Jump.started += ctx => Jump(ctx);
+		}
+
+		private void Jump(InputAction.CallbackContext ctx)
+		{
+			JumpInput(ctx.ReadValueAsButton());
+		}
+
+		private void Move(InputAction.CallbackContext ctx)
+		{
+			MoveInput(ctx.ReadValue<Vector2>());
+		}
 
 		public void MoveInput(Vector2 newMoveDirection)
 		{
@@ -105,6 +135,7 @@ namespace StarterAssets
 		private void Update()
 		{
 			
+
 			if (isPause)
 			{
 				Time.timeScale = 0;
@@ -117,4 +148,3 @@ namespace StarterAssets
 		}
 	}
 	
-}
