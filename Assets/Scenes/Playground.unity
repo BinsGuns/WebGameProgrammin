@@ -8731,6 +8731,7 @@ Transform:
   - {fileID: 667210993}
   - {fileID: 950523622}
   - {fileID: 239116293}
+  - {fileID: 2047848154}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9449,6 +9450,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mice (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041903848227908381, guid: 8bfe630ed889b4bb0b700631fa053008,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bfe630ed889b4bb0b700631fa053008, type: 3}
@@ -14459,6 +14465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mice (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041903848227908381, guid: 8bfe630ed889b4bb0b700631fa053008,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bfe630ed889b4bb0b700631fa053008, type: 3}
@@ -80106,6 +80117,65 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 663018498}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2047848153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047848154}
+  - component: {fileID: 2047848156}
+  - component: {fileID: 2047848155}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2047848154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047848153}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 224210198}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2047848155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047848153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5426fab0ec0344f6aaf2e00c1f20ac6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2047848156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047848153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406330956e18c4e39bd641c3f3b14517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2807548787377680009}
+  poolSize: 3
 --- !u!1001 &2048642974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85758,8 +85828,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mice
       objectReference: {fileID: 0}
+    - target: {fileID: 3041903848227908381, guid: 8bfe630ed889b4bb0b700631fa053008,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bfe630ed889b4bb0b700631fa053008, type: 3}
+--- !u!1 &2807548787377680009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3041903848227908381, guid: 8bfe630ed889b4bb0b700631fa053008,
+    type: 3}
+  m_PrefabInstance: {fileID: 2807548787377680008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7984762558371325318
 PrefabInstance:
   m_ObjectHideFlags: 0
