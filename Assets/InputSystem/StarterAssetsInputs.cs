@@ -28,9 +28,13 @@ using UnityEngine.InputSystem;
 		public TextMeshProUGUI Score;
 		private CustomInput _customInput;
 
+		[SerializeField] private GameObject _pauseButton;
+		[SerializeField] private GameObject _resumeButton;
+
 		private void Awake()
 		{
 			_customInput = new CustomInput();
+			_resumeButton.SetActive(false);
 		}
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -118,10 +122,14 @@ using UnityEngine.InputSystem;
 		{
 			Debug.Log("P");
 			isPause = true;
+			_pauseButton.SetActive(false);
+			_resumeButton.SetActive(true);
 		}
 		public void OnResumeGame ()
 		{
 			isPause = false;
+			_pauseButton.SetActive(true);
+			_resumeButton.SetActive(false);
 		}
 		
 		
